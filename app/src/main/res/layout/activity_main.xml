@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="modelata"
+            type="cod.a1byte.kotlinapicall.ViewModel.UserViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+       >
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={modelata.email}"
+            android:hint="Email"/>
+
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={modelata.password}"
+            android:hint="Password"/>
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ButtonClickEvent"
+            android:onClick="@{modelata::onButtonClick}"/>
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{modelata.age}"
+            />
+    <TextView
+            android:id="@+id/tvFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{modelata.fullName}"
+            />
+    <TextView
+            android:id="@+id/tvType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{modelata.gender}"
+            />
+    <TextView
+            android:id="@+id/tvPataNahi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{modelata.registrationType}"
+            />
+    </LinearLayout>
+</layout>
